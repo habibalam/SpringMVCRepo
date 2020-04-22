@@ -1,0 +1,25 @@
+CREATE TABLE `capp_db`.`user` (
+  `userId` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `phone` VARCHAR(50) NULL,
+  `email` VARCHAR(50) NULL,
+  `address` VARCHAR(120) NULL,
+  `loginName` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(50) NULL,
+  `role` INT(1) NOT NULL DEFAULT 2,
+  `loginStatus` INT(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`userId`),
+  UNIQUE INDEX `loginName_UNIQUE` (`loginName` ASC));
+
+  
+  
+  ----- after forenky--------
+  ALTER TABLE `capp_db`.`contact` 
+ADD INDEX `user_fk_idx` (`userId` ASC);
+ALTER TABLE `capp_db`.`contact` 
+ADD CONSTRAINT `user_fk`
+  FOREIGN KEY (`userId`)
+  REFERENCES `capp_db`.`user` (`userId`)
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
+  

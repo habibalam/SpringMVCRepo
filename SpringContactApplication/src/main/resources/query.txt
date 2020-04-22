@@ -1,0 +1,9 @@
+CREATE TABLE `capp_db`.`contact` (
+  `contactId` INT NOT NULL AUTO_INCREMENT,
+  `userId` INT NULL,
+  `name` VARCHAR(45) NULL,
+  `phone` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `address` VARCHAR(120) NULL,
+  `remark` VARCHAR(120) NULL,
+  PRIMARY KEY (`contactId`));
